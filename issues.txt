@@ -1,0 +1,2 @@
+ - connection to chatGPT LLM doesn't seem to be working
+ - conversation doesn't seem to save since it's not able to reference previous prompts
