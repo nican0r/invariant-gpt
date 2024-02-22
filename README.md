@@ -1,8 +1,9 @@
-# chatgpt-retrieval
+# invariant-gpt
 
-Simple script to use ChatGPT on your own files.
+Simple script to use ChatGPT to generate invariants from audit findings.
 
-Here's the [YouTube Video](https://youtu.be/9AXP7tCI9PI).
+Forked from [chatgpt-retrieval](https://github.com/techleadhd/chatgpt-retrieval)
+Accompanying YouTube video for the original repo [YouTube Video](https://youtu.be/9AXP7tCI9PI).
 
 ## Installation
 
@@ -12,17 +13,21 @@ pip install langchain openai chromadb tiktoken unstructured
 ```
 Modify `constants.py.default` to use your own [OpenAI API key](https://platform.openai.com/account/api-keys), and rename it to `constants.py`.
 
-Place your own data into `data/data.txt`.
+Training data can be added into `data/` directory as long as the file format is supported by `unstructured` handler.
 
-## Example usage
+## Example Usage
 Test reading `data/data.txt` file.
 ```
-> python chatgpt.py "what is my dog's name"
-Your dog's name is Sunny.
+> python chatgpt.py "what are the different types of properties that certora defines"
+Certora defines 5 main types of properties:
+
+1. Valid States
+2. State Transitions
+3. Variable Transitions
+4. High-Level Properties
+5. Unit Tests
 ```
 
-Test reading `data/cat.pdf` file.
-```
-> python chatgpt.py "what is my cat's name"
-Your cat's name is Muffy.
-```
+To quit a chat session use the keyword q | quit | exit + enter.
+
+To save chat history for better responses enable PERSIST=true. This requires adding a Chromadb instance for saving VectorStores.

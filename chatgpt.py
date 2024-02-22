@@ -38,19 +38,13 @@ else:
   else:
     index = VectorstoreIndexCreator().from_loaders([loader])
 
-prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are an advisor to developers who want to create invariant test"),
-    ("user", "{input}")
-])
-
 # this is considered a legacy chain type 
 # this chain type is used for having conversations with a document
 # takes in a question and previous conversation history
 chain = ConversationalRetrievalChain.from_llm(
   # llm is the model being used
   llm=ChatOpenAI(model="gpt-3.5-turbo"),
-  retriever=index.vectorstore.as_retriever(search_kwargs={"k": 1}),
-  prompt=prompt
+  retriever=index.vectorstore.as_retriever(search_kwargs={"k": 1})
 )
 
 # this only creates a temporary chat history that gets cleared after a prompt session is ended
