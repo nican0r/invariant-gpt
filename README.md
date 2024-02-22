@@ -2,7 +2,8 @@
 
 Simple script to use ChatGPT to generate invariants from audit findings.
 
-Forked from [chatgpt-retrieval](https://github.com/techleadhd/chatgpt-retrieval)
+Forked from [chatgpt-retrieval](https://github.com/techleadhd/chatgpt-retrieval).
+
 Accompanying YouTube video for the original repo [YouTube Video](https://youtu.be/9AXP7tCI9PI).
 
 ## Installation
